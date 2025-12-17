@@ -46,8 +46,7 @@ function App() {
   return (
     <div className="App">
       <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
+      
       <form onSubmit={addTodo}>
         <input
           value={input}
