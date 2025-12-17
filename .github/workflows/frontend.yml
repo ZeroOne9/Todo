@@ -14,22 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      # Bước Setup Node.js CÓ THỂ XÓA vì Vercel action không cần
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '18'
       
-      - name: Install dependencies
-        run: |
-          cd frontend
-          npm ci
-      
-      - name: Build
-        run: |
-          cd frontend
-          npm run build
-        env:
-          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+      # XÓA HOÀN TOÀN 2 bước "Install dependencies" và "Build" 
+      # KHÔNG cần chúng khi để Vercel tự build
       
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
@@ -38,4 +30,4 @@ jobs:
           vercel-org-id: ${{ secrets.TODO_VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.TODO_VERCEL_PROJECT_ID }}
           working-directory: ./frontend
-          vercel-args: '--prebuilt'
+          # KHÔNG thêm vercel-args nào (không có --prebuilt)
