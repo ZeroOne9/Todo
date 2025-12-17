@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>📝 My Todo List Deployed via GitHub Actions</h1>
+      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
       <form onSubmit={addTodo}>
         <input
           value={input}
@@ -64,7 +64,7 @@ function App() {
       </ul>
       <footer style={{ marginTop: "20px", color: "#999", fontSize: "14px" }}>
         Deployed via GitHub Actions 🚀 | Version 1.0
-      </footer>
+      </footer> 
     </div>
   );
 }
