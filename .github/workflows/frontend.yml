@@ -29,12 +29,12 @@ jobs:
           cd frontend
           npm run build
         env:
-          REACT_APP_API_URL: ${{ secrets.API_URL }}
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
       
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-token: ${{ secrets.TODO_VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.TODO_VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.TODO_VERCEL_PROJECT_ID }}
           working-directory: ./frontend
