@@ -3,10 +3,6 @@ name: Deploy Frontend to Vercel
 on:
   push:
     branches: [master]
-    paths:
-      - 'frontend/**'
-  pull_request:
-    branches: [master]
 
 jobs:
   deploy:
@@ -14,20 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # Bước Setup Node.js CÓ THỂ XÓA vì Vercel action không cần
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '18'
-      
-      # XÓA HOÀN TOÀN 2 bước "Install dependencies" và "Build" 
-      # KHÔNG cần chúng khi để Vercel tự build
-      
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.TODO_VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.TODO_VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.TODO_VERCEL_PROJECT_ID }}
-          working-directory: ./frontend
-          # KHÔNG thêm vercel-args nào (không có --prebuilt)
+          # CHỈ CẦN 2 THỨ NÀY:
+          vercel-args: '--prod'
