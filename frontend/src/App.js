@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     fetchTodos();
@@ -24,10 +24,10 @@ function App() {
   const addTodo = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-    
+
     try {
       await axios.post(`${API_URL}/api/todos`, { text: input });
-      setInput('');
+      setInput("");
       fetchTodos();
     } catch (err) {
       console.error(err);
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>📝 My Todo List</h1>
+      <h1>📝 My Todo List Deployed via GitHub Actions</h1>
       <form onSubmit={addTodo}>
         <input
           value={input}
@@ -55,16 +55,16 @@ function App() {
         <button type="submit">Add</button>
       </form>
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo._id}>
             {todo.text}
             <button onClick={() => deleteTodo(todo._id)}>❌</button>
           </li>
         ))}
       </ul>
-       <footer style={{marginTop: '20px', color: '#999', fontSize: '14px'}}>
-      Deployed via GitHub Actions 🚀 | Version 1.0
-    </footer>
+      <footer style={{ marginTop: "20px", color: "#999", fontSize: "14px" }}>
+        Deployed via GitHub Actions 🚀 | Version 1.0
+      </footer>
     </div>
   );
 }
