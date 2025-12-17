@@ -62,6 +62,9 @@ function App() {
           </li>
         ))}
       </ul>
+       <footer style={{marginTop: '20px', color: '#999', fontSize: '14px'}}>
+      Deployed via GitHub Actions 🚀 | Version 1.0
+    </footer>
     </div>
   );
 }
