@@ -3,6 +3,10 @@ name: Deploy Frontend to Vercel
 on:
   push:
     branches: [master]
+    paths:
+      - 'frontend/**'
+  pull_request:
+    branches: [master]
 
 jobs:
   deploy:
@@ -10,11 +14,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: |
+          cd frontend
+      
+      - name: Build
+        run: |
+          cd frontend
+        env:
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+      
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.TODO_VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.TODO_VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.TODO_VERCEL_PROJECT_ID }}
-          # CHỈ CẦN 2 THỨ NÀY:
-          vercel-args: '--prod'
+          working-directory: ./frontend
+          
