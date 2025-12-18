@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL|| "http://localhost:10000";
+const API_URL = process.env.REACT_APP_API_URL|| "https://todo-kupl.onrender.com";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -46,78 +47,7 @@ function App() {
   return (
     <div className="App">
       
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>
-      
+      <h1>📝Todo List Của Thiên Deployed via GitHub Actions</h1>    
       
       <form onSubmit={addTodo}>
         <input
